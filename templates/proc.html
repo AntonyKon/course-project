@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Процедура</title>
+    <link rel="stylesheet" href="/static/styles/style.css">
+</head>
+<body>
+<form method="post" action="">
+    <fieldset>
+        <legend>Введите год и месяц для создания отчета</legend>
+        <p>
+            <label>
+                Введите год:
+                <input type="number" name="year" min="1" max="2020" pattern="[0-9]*" required>
+            </label>
+        </p>
+        <p>
+            <label>
+                Введите месяц:
+                <input type="number" name="month" min="1" max="12" pattern="[0-9]*" required>
+            </label>
+        </p>
+        <input type="submit" name="send" id="send" value="Создать отчет">
+    </fieldset>
+</form>
+{% if proc==0 %}
+    <div class="proc_result ok">Отчет успешно создан</div>
+{% elif proc == 1 %}
+    <div class="proc_result exist">Такой отчет уже существует!</div>
+{% endif %}
+<button class="return" onclick="window.location.href = '/';">Назад в главное меню</button>
+<footer>Курсовая работа по дисциплине "Базы данных". Студент РК6-41Б Кононенко А.В. 2020.</footer>
+</body>
+</html>

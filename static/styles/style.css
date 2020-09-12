@@ -1,0 +1,150 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    background-color: rgba(97, 215, 151, 0.8);
+    color: white;
+    font-family: 'Arial', serif;
+    font-size: 14pt;
+    margin-bottom: 80px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    height: 0;
+    background-color: cadetblue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+caption {
+    text-shadow: 1px 1px 2px black;
+    padding-bottom: 10px;
+}
+
+button {
+    display: block;
+    border: 2px solid darkslategrey;
+    background-color: cadetblue;
+    border-radius: 5px;
+    color: white;
+    padding: 20px 5%;
+    width: 50%;
+    font-family: 'Arial Black', serif;
+    font-size: 0.75em;
+    transition: all 0.5s;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+button::after {
+    content: '→';
+    position: absolute;
+    font-size: 2.5em;
+    bottom: 15%;
+    left: 92%;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+button.return::after {
+    content: '←';
+    position: absolute;
+    font-size: 2.5em;
+    bottom: 15%;
+    left: 5%;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+button:hover::after {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+button:active {
+    background-color: #477779;
+    transition: 0s;
+    outline: none;
+}
+
+table {
+    width: 50%;
+    margin: 0 auto 10px;
+    background-color: cadetblue;
+    border: 3px solid darkslategrey;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 2px solid darkslategrey;
+    padding: 10px 10px;
+}
+
+fieldset {
+    position: relative;
+    background-color: cadetblue;
+    margin: 5% auto 20px;
+    width: 30%;
+    border-radius: 5px;
+    border-color: darkslategrey;
+}
+
+fieldset.find {
+    margin-top: 2%;
+}
+
+legend {
+    border-color: white;
+    position: absolute;
+    bottom: 85%;
+    left: 5px;
+    font-weight: bold;
+}
+
+p {
+    padding-top: 20px;
+}
+
+input {
+    border-color: cadetblue;
+    border-width: 1px;
+}
+
+input[type="number"] {
+    float: right;
+    width: 50%;
+}
+
+input[type="submit"] {
+    width: 40%;
+    height: 30px;
+    display: block;
+    margin: 10px auto;
+    color: cadetblue;
+    font-weight: bold;
+}
+
+.proc_result {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.ok {
+    color: blue;
+}
+
+.exist {
+    color: darkred;
+}

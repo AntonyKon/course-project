@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчеты</title>
+    <link rel="stylesheet" href="/static/styles/style.css">
+</head>
+<body>
+<form method="post">
+    <fieldset class="find">
+        <legend>Введите данные для получения отчетов</legend>
+        <p>
+            <label>
+                Введите год:
+                <input type="number" name="year" min="1" max="2020" pattern="[0-9]*">
+            </label>
+        </p>
+        <p>
+            <label>
+                Введите месяц:
+                <input type="number" name="month" min="1" max="12" pattern="[0-9]*">
+            </label>
+        </p>
+        <input type="submit" name="send" id="send" value="Показать отчет">
+    </fieldset>
+</form>
+
+{% if otchet == 1 %}
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Год</th>
+            <th>Месяц</th>
+            <th>Отдел</th>
+            <th>Общее кол-во тестов</th>
+        </tr>
+    {% for string in table %}
+        <tr>
+            <td>{{ string['id'] }}</td>
+            <td>{{ string['year'] }}</td>
+            <td>{{ string['month'] }}</td>
+            <td>{{ string['department'] }}</td>
+            <td>{{ string['tests'] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+<button class="return" onclick="window.location.href = '/';">Назад в главное меню</button>
+<footer>Курсовая работа по дисциплине "Базы данных". Студент РК6-41Б Кононенко А.В. 2020.</footer>
+</body>
+</html>

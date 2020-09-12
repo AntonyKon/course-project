@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты запроса</title>
+    <link rel="stylesheet" href="/static/styles/style.css">
+</head>
+<body>
+<h1>Результаты запроса</h1>
+{%- if ans == 0 -%}
+    <span>Unable to connect to database</span>
+{% endif %} 
+
+{% if ans == 1 -%}
+    <table>
+    <caption>Отчет о тестировании в марте 2017 года</caption>
+        <tr>
+            <th>Id</th>
+            <th>Имя оборудования</th>
+            <th>Сотрудник</th>
+            <th>Статус</th>
+            <th>Дата</th>
+        </tr>
+    {% for string in table %}
+        <tr>
+            <td>{{ string['id'] }}</td>
+            <td>{{ string['name'] }}</td>
+            <td>{{ string['employee'] }}</td>
+            <td>{{ string['status'] }}</td>
+            <td>{{ string['date'] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+
+{%- if ans == 2 -%}
+    <table>
+    <caption>Фамилии сотрудников и количество составленных ими протоколов, в марте 2017 года</caption>
+        <tr>
+            <th>Сотрудник</th>
+            <th>Кол-во протоколов</th>
+        </tr>
+    {% for string in table %}
+        <tr>
+            <td>{{ string['employee'] }}</td>
+            <td>{{ string['count'] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+
+{%- if ans == 3 -%}
+    <table>
+    <caption>Сведения об оборудовании, которое было установлено самым первым по времени</caption>
+        <tr>
+            <th>id</th>
+            <th>Название оборудования</th>
+            <th>Производитель</th>
+            <th>Тип оборудования</th>
+        </tr>
+    {% for string in table %}
+        <tr>
+            <td>{{ string['id'] }}</td>
+            <td>{{ string['name'] }}</td>
+            <td>{{ string['producer'] }}</td>
+            <td>{{ string['type'] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+
+{%- if ans == 4 -%}
+    <table>
+    <caption>Фамилии сотрудников, которые когда-либо тестировали оборудование с шифром ХХХ</caption>
+        <tr>
+            <th>Сотрудник</th>
+        </tr>
+    {% for string in table %}
+        <tr>
+            <td>{{ string['employee'] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+
+{%- if ans == 5 -%}
+    <table>
+    <caption>Фамилии сотрудников, которые еще ни разу не тестировали оборудование</caption>
+        <tr>
+            <th>Сотрудник</th>
+        </tr>
+    {% for string in table %}
+        <tr>
+            <td>{{ string['employee'] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+
+{%- if ans == 6 -%}
+    <table>
+    <caption>Фамилии сотрудников, которые не проводили тестирований в марте 2017 года</caption>
+        <tr>
+            <th>Сотрудник</th>
+        </tr>
+    {% for string in table %}
+        <tr>
+            <td>{{ string['employee'] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+<button class="return" onclick="window.location.href = '/';">Назад в главное меню</button>
+<footer>Курсовая работа по дисциплине "Базы данных". Студент РК6-41Б Кононенко А.В. 2020.</footer>
+</body>
+</html>
